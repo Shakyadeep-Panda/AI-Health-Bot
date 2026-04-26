@@ -1,0 +1,245 @@
+{% extends "base.html" %} {% block head %}
+<title> Health-Bot </title>
+{% endblock head %} {% block hero %}
+
+<section id="hero" class="hero d-flex align-items-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <h1 data-aos="fade-up">What is Health-Bot</h1>
+                <h2 data-aos="fade-up" data-aos-delay="400" style="text-align: justify;">
+                    The healthcare industry is continually striving to enhance patient experience and treatment outcomes. One effective approach to achieving this is by utilizing artificial intelligence (AI) to deliver personalized predictions and recommendations based on patients’ symptoms and medical records. This project proposes the development of an AI-driven hospital recommendation and disease prediction chatbot that can identify symptoms and suggest suitable hospitals according to the user’s specific medical requirements. 
+
+                                   </h2>
+                <div data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center text-lg-start">
+                        <a href="#about" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                            <span>Get Started</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                <img src="{{ url_for('static',filename='custom/hero-main.png') }}" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock hero %} {% block main %}
+
+<!-- ======= About Section ======= -->
+<section id="about" class="about">
+
+    <div class="container" data-aos="fade-up">
+        <div class="row gx-0">
+
+            <div class="col-lg-6 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="content">
+                    <h3>BMI</h3>
+                    <h2>The Body Mass Index (BMI) is a widely used metric for defining the anthropometric relationship between height and weight in adults and for categorizing individuals into different health or weight classification groups.</h2>
+                    <div class="text-center text-lg-start">
+                        <a href="login" class="btn-read-more d-inline-flex align-items-center justify-content-center align-self-center">
+                            <span>Check BMI</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 d-flex align-items-center" data-aos="zoom-out" data-aos-delay="200">
+                <img src="{{ url_for('static',filename='custom/about.png') }}" class="img-fluid" alt="">
+            </div>
+
+        </div>
+    </div>
+
+</section>
+<!-- End About Section -->
+
+
+
+<!-- ======= Features Section ======= -->
+<section id="features" class="features">
+
+    <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+            <h2>Features</h2>
+            <p>What makes our website unique?</p>
+        </header>
+
+        <div class="row">
+
+            <div class="col-lg-6">
+                <img src="{{ url_for('static',filename='img/features.png') }}" class="img-fluid" alt="">
+            </div>
+
+            <div class="col-lg-6 mt-5 mt-lg-0 d-flex">
+                <div class="row align-self-center gy-4">
+
+                    <div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
+                        <div class="feature-box d-flex align-items-center">
+                            <i class="bi bi-check"></i>
+                            <h3>Quick evaluation</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
+                        <div class="feature-box d-flex align-items-center">
+                            <i class="bi bi-check"></i>
+                            <h3>User friendly</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
+                        <div class="feature-box d-flex align-items-center">
+                            <i class="bi bi-check"></i>
+                            <h3>Tailored nutrition plans</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
+                        <div class="feature-box d-flex align-items-center">
+                            <i class="bi bi-check"></i>
+                            <h3>Wellness advice</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
+                        <div class="feature-box d-flex align-items-center">
+                            <i class="bi bi-check"></i>
+                            <h3>Convenient sharing</h3>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
+                        <div class="feature-box d-flex align-items-center">
+                            <i class="bi bi-check"></i>
+                            <h3>Reliable results</h3>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+        <!-- / row -->
+
+    </div>
+
+</section>
+<!-- End Features Section -->
+
+<!-- ======= Team Section ======= -->
+<section id="team" class="team">
+
+    <div class="container" data-aos="fade-up">
+
+        <header class="section-header">
+            <h2>Team</h2>
+            <p>Meet Our members</p>
+        </header>
+
+        <div class="row gy-4">
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                <div class="member">
+                    <div class="member-img">
+                        <img src="{{ url_for('static',filename='img/team/team-1.jpg') }}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href=""><i class="bi bi-twitter"></i></a>
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-instagram"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Satya Prakash Sahoo</h4>
+                        <span>2201287159</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                <div class="member">
+                    <div class="member-img">
+                        <img src="{{ url_for('static',filename='img/team/team-2.jpg') }}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href=""><i class="bi bi-twitter"></i></a>
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-instagram"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Shubham Nayak</h4>
+                        <span>2201287167</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                <div class="member">
+                    <div class="member-img">
+                        <img src="{{ url_for('static',filename='img/team/team-3.jpg') }}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href=""><i class="bi bi-twitter"></i></a>
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-instagram"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Satyabrata Das</h4>
+                        <span>2201287158</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                <div class="member">
+                    <div class="member-img">
+                        <img src="{{ url_for('static',filename='img/team/team-4.jpg') }}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href=""><i class="bi bi-twitter"></i></a>
+                            <a href="https://www.facebook.com/share/1CzTE2zag3/"><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-instagram"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Shakyadeep Panda</h4>
+                        <span>2201287161</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+                <div class="member">
+                    <div class="member-img">
+                        <img src="{{ url_for('static',filename='img/team/team-5.jpg') }}" class="img-fluid" alt="">
+                        <div class="social">
+                            <a href=""><i class="bi bi-twitter"></i></a>
+                            <a href=""><i class="bi bi-facebook"></i></a>
+                            <a href=""><i class="bi bi-instagram"></i></a>
+                            <a href=""><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h4>Basudeba Nanda</h4>
+                        <span>2321287043</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+<!-- End Team Section -->
+
+{% endblock main %}

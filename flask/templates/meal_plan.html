@@ -1,0 +1,54 @@
+{% extends "base_login.html" %}
+{% block head %}
+<title>Personalized Meal Plan</title>
+{% endblock head %}
+
+{% block main %}
+<section id="meal-plan" class="meal-plan">
+  <div class="container" data-aos="fade-up">
+    <header class="section-header">
+      <h2>Personalized Meal Plan</h2>
+      {% if bmi %}
+        <p>Your BMI: {{ bmi }} → Goal: {{ goal|replace("_", " ")|title }} → Target: {{ calories }} kcal/day</p>
+      {% else %}
+        <p>Adjust your BMI first to get your personalized plan.</p>
+      {% endif %}
+    </header>
+
+    {% if error %}
+      <p class="text-danger">{{ error }}</p>
+    {% endif %}
+
+    {% if meal_plan %}
+      {% for meal_time, foods in meal_plan.items() %}
+        <h3 class="mt-4 text-primary">{{ meal_time }}</h3>
+        <div class="table-responsive">
+          <table class="table table-striped text-center">
+            <thead class="table-dark">
+              <tr>
+                <th>Food Name</th>
+                <th>Calories (kcal)</th>
+                <th>Carbohydrates (g)</th>
+                <th>Protein (g)</th>
+                <th>Serving Size (g)</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for row in foods %}
+                <tr>
+                  <td>{{ row['food name'] }}</td>
+                  <td>{{ row['calories (kcal)'] }}</td>
+                  <td>{{ row['carbohydrates (g)'] }}</td>
+                  <td>{{ row['protein (g)'] }}</td>
+                  <td>{{ row['serving size (g)'] }}</td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p class="text-muted">No matching meals found. Try adjusting your BMI range.</p>
+    {% endif %}
+  </div>
+</section>{% endblock main %}

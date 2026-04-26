@@ -1,0 +1,72 @@
+﻿{% extends "base_login.html" %}
+{% block head %}
+<title>BMI Calculator</title>
+{% endblock head %}
+
+{% block main %}
+<section id="bmi" class="bmi">
+  <div class="container" data-aos="fade-up">
+    <header class="section-header">
+      <h2>BMI Calculator</h2>
+      <p>Adjust your height and weight to see your Body Mass Index</p>
+    </header>
+
+    <div class="card p-4 shadow-lg" style="max-width:600px; margin:auto;">
+      <label for="height" class="form-label">Height: <span id="height-value">170</span> cm</label>
+      <input type="range" id="height" min="100" max="220" value="170" step="1" class="form-range" oninput="calculateBMI()">
+
+      <label for="weight" class="form-label mt-3">Weight: <span id="weight-value">65</span> kg</label>
+      <input type="range" id="weight" min="30" max="200" value="65" step="1" class="form-range" oninput="calculateBMI()">
+
+      <div class="mt-4 text-center">
+        <h4 id="bmi-result">Your BMI: --</h4>
+        <h5 id="bmi-status" class="text-secondary"></h5>
+
+        <div class="progress mt-3" style="height: 20px;">
+          <div id="bmi-progress" class="progress-bar bg-success" role="progressbar" style="width:0%; transition: width 0.5s;"></div>
+        </div>
+
+        <div id="bmi-emoji" style="font-size:2rem; margin-top:10px;"></div>
+
+        <a href="/mealplan" class="btn btn-primary mt-3">Get Personalized Meal Plan 🍎</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function calculateBMI() {
+  const heightSlider = document.getElementById("height");
+  const weightSlider = document.getElementById("weight");
+
+  const height = parseFloat(heightSlider.value);
+  const weight = parseFloat(weightSlider.value);
+  const result = document.getElementById("bmi-result");
+  const status = document.getElementById("bmi-status");
+  const progress = document.getElementById("bmi-progress");
+  const emoji = document.getElementById("bmi-emoji");
+
+  document.getElementById("height-value").innerText = height;
+  document.getElementById("weight-value").innerText = weight;
+
+  if (!height || !weight) return;
+
+  const bmi = (weight / ((height / 100) ** 2)).toFixed(1);
+  result.innerText = "Your BMI: " + bmi;
+
+  let msg = "", color = "bg-success", icon = "";
+  if (bmi < 18.5) { msg = "Underweight 🥗"; color = "bg-info"; icon = "🥦"; }
+  else if (bmi < 24.9) { msg = "Normal Weight 💪"; color = "bg-success"; icon = "🏋️‍♂️"; }
+  else if (bmi < 29.9) { msg = "Overweight ⚠️"; color = "bg-warning"; icon = "🍕"; }
+  else { msg = "Obese 🚨"; color = "bg-danger"; icon = "🚫"; }
+
+  status.innerText = msg;
+  emoji.innerText = icon;
+
+  // Update progress bar width and color
+  let width = Math.min(100, (bmi / 40) * 100);
+  progress.style.width = width + "%";
+  progress.className = "progress-bar " + color;
+}
+</script>
+{% endblock main %}
